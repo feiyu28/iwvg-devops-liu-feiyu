@@ -33,6 +33,35 @@ public class Fraction {
         return (double) numerator / denominator;
     }
 
+    public boolean isProper() {
+        return numerator < denominator;
+    }
+
+    public boolean isImproper() {
+        return numerator > denominator;
+    }
+
+    public boolean isEquivalent(Fraction fraction) {
+        return (numerator * fraction.denominator) == (denominator * fraction.numerator);
+    }
+
+    public void add(Fraction fraction) {
+        int commonDenominator = denominator * fraction.denominator;
+        int newNumerator = numerator * fraction.denominator + denominator * fraction.numerator;
+        numerator = newNumerator;
+        denominator = commonDenominator;
+    }
+
+    public void multiply(Fraction fraction) {
+        numerator *= fraction.numerator;
+        denominator *= fraction.denominator;
+    }
+
+    public void divide(Fraction fraction) {
+        numerator *= fraction.denominator;
+        denominator *= fraction.numerator;
+    }
+
     @Override
     public String toString() {
         return "Fraction{" +
