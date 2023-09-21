@@ -30,6 +30,11 @@ class UserTest {
     }
 
     @Test
+    void testUser() {
+        assertTrue(user.getFractions().isEmpty());
+    }
+
+    @Test
     void testInitials() {
         assertEquals("J.", user.initials());
     }
