@@ -11,4 +11,11 @@ public class Searches {
                                 || fraction.getDenominator() < 0))
                 .map(Fraction::decimal);
     }
+
+    public Stream<String> findUserNameBySomeImproperFraction() {
+        return new UsersDatabase().findAll()
+                .filter(user -> user.getFractions().stream()
+                        .anyMatch(Fraction::isImproper))
+                .map(User::getName);
+    }
 }
