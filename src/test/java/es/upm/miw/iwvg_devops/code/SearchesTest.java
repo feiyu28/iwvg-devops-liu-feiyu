@@ -22,4 +22,15 @@ class SearchesTest {
         assertEquals(-0.5, found[1]);
         assertEquals(-0.0, found[2]);
     }
+
+    @Test
+    void testFindUserNameBySomeImproperFraction() {
+        Object[] found = search.findUserNameBySomeImproperFraction().toArray();
+        assertEquals(5, found.length);
+        assertEquals("Oscar", found[0]);
+        assertEquals("Ana", found[1]);
+        assertEquals("Oscar", found[2]);
+        assertEquals("Antonio", found[3]);
+        assertEquals("Paula", found[4]);
+    }
 }
