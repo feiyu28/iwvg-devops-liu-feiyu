@@ -1,5 +1,6 @@
 package es.upm.miw.iwvg_devops.code;
 
+import java.util.Optional;
 import java.util.stream.Stream;
 
 public class Searches {
@@ -17,5 +18,16 @@ public class Searches {
                 .filter(user -> user.getFractions().stream()
                         .anyMatch(Fraction::isImproper))
                 .map(User::getName);
+    }
+
+    public Fraction findHighestFraction() {
+        Optional<Double> maxValue = new UsersDatabase().findAll()
+                .flatMap(user -> user.getFractions().stream())
+                .map(Fraction::decimal).filter(decimal -> !decimal.isNaN() && !decimal.isInfinite())
+                .max(Double::compareTo);
+        Optional<Fraction> highestFraction = new UsersDatabase().findAll()
+                .flatMap(user -> user.getFractions().stream()
+                        .filter(fraction -> fraction.decimal() == maxValue.orElse(Double.NaN))).findFirst();
+        return highestFraction.orElse(null);
     }
 }
