@@ -54,24 +54,24 @@ class FractionTest {
 
     @Test
     void testAdd() {
-        fraction.add(new Fraction(1, 3));
-        assertEquals(5, fraction.getNumerator());
-        assertEquals(6, fraction.getDenominator());
+        Fraction addedFraction = fraction.add(new Fraction(1, 3));
+        assertEquals(5, addedFraction.getNumerator());
+        assertEquals(6, addedFraction.getDenominator());
     }
 
     @Test
     void testMultiply() {
         fraction.setNumerator(2);
         fraction.setDenominator(5);
-        fraction.multiply(new Fraction(2, 3));
-        assertEquals(4, fraction.getNumerator());
-        assertEquals(15, fraction.getDenominator());
+        Fraction multipliedFraction = fraction.multiply(new Fraction(2, 3));
+        assertEquals(4, multipliedFraction.getNumerator());
+        assertEquals(15, multipliedFraction.getDenominator());
     }
 
     @Test
     void testDivide() {
-        fraction.divide(new Fraction(1, 4));
-        assertEquals(4, fraction.getNumerator());
-        assertEquals(2, fraction.getDenominator());
+        Fraction dividedFraction = fraction.divide(new Fraction(1, 4));
+        assertEquals(4, dividedFraction.getNumerator());
+        assertEquals(2, dividedFraction.getDenominator());
     }
 }

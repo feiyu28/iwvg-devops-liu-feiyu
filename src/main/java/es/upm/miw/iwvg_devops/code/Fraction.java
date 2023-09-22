@@ -45,21 +45,22 @@ public class Fraction {
         return (numerator * fraction.denominator) == (denominator * fraction.numerator);
     }
 
-    public void add(Fraction fraction) {
+    public Fraction add(Fraction fraction) {
         int commonDenominator = denominator * fraction.denominator;
         int newNumerator = numerator * fraction.denominator + denominator * fraction.numerator;
-        numerator = newNumerator;
-        denominator = commonDenominator;
+        return new Fraction(newNumerator, commonDenominator);
     }
 
-    public void multiply(Fraction fraction) {
-        numerator *= fraction.numerator;
-        denominator *= fraction.denominator;
+    public Fraction multiply(Fraction fraction) {
+        int newNumerator = numerator * fraction.numerator;
+        int newDenominator = denominator * fraction.denominator;
+        return new Fraction(newNumerator, newDenominator);
     }
 
-    public void divide(Fraction fraction) {
-        numerator *= fraction.denominator;
-        denominator *= fraction.numerator;
+    public Fraction divide(Fraction fraction) {
+        int newNumerator = numerator * fraction.denominator;
+        int newDenominator = denominator * fraction.numerator;
+        return new Fraction(newNumerator, newDenominator);
     }
 
     @Override
