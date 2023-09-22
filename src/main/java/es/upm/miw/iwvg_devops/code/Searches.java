@@ -25,9 +25,18 @@ public class Searches {
                 .flatMap(user -> user.getFractions().stream())
                 .map(Fraction::decimal).filter(decimal -> !decimal.isNaN() && !decimal.isInfinite())
                 .max(Double::compareTo);
-        Optional<Fraction> highestFraction = new UsersDatabase().findAll()
+        return new UsersDatabase().findAll()
                 .flatMap(user -> user.getFractions().stream()
-                        .filter(fraction -> fraction.decimal() == maxValue.orElse(Double.NaN))).findFirst();
-        return highestFraction.orElse(null);
+                        .filter(fraction -> fraction.decimal() == maxValue.orElse(Double.NaN)))
+                .findFirst()
+                .orElse(null);
+    }
+
+    public Fraction findFractionDivisionByUserId(String id) {
+        return new UsersDatabase().findAll()
+                .filter(user -> id.equals(user.getId()))
+                .flatMap(user -> user.getFractions().stream())
+                        .reduce(Fraction::divide)
+                .orElse(null);
     }
 }

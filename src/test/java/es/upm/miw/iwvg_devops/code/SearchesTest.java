@@ -27,4 +27,11 @@ class SearchesTest {
         assertEquals(2, fraction.getNumerator());
         assertEquals(1, fraction.getDenominator());
     }
+
+    @Test
+    void testFindFractionDivisionByUserId() {
+        Fraction fraction = new Searches().findFractionDivisionByUserId("4");
+        assertEquals(8, fraction.getNumerator());
+        assertEquals(8, fraction.getDenominator());
+    }
 }
