@@ -36,7 +36,7 @@ public class Searches {
         return new UsersDatabase().findAll()
                 .filter(user -> id.equals(user.getId()))
                 .flatMap(user -> user.getFractions().stream())
-                        .reduce(Fraction::divide)
+                .reduce(Fraction::divide)
                 .orElse(null);
     }
 }
