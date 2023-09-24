@@ -31,7 +31,7 @@ class UserTest {
 
     @Test
     void testUser() {
-        assertTrue(user.getFractions().isEmpty());
+        assertTrue(new User().getFractions().isEmpty());
     }
 
     @Test

@@ -1,7 +1,7 @@
-## [Máster en Ingeniería Web por la Universidad Politécnica de Madrid (miw-upm)](http://miw.etsisi.upm.es)
-## Ingeniería Web: Visión General (IWVG) DevOps
-> Este proyecto es una Plantilla de apoyo docente de la asignatura.
+## [Master in Web Engineering from the Polytechnic University of Madrid (miw-upm)](http://miw.etsisi.upm.es)
+## Web Engineering: Overview (IWVG) DevOps
+> This is a README for this project.
 
-### Estado del código
+### Code status
 [![CI](https://github.com/feiyu28/iwvg-devops-liu-feiyu/actions/workflows/ci.yml/badge.svg?branch=develop)](https://github.com/feiyu28/iwvg-devops-liu-feiyu/actions/workflows/ci.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=iwvg-devops-liu-feiyu&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=iwvg-devops-liu-feiyu)
