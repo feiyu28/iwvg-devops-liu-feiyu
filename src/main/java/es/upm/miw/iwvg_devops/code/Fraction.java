@@ -42,24 +42,24 @@ public class Fraction {
     }
 
     public boolean isEquivalent(Fraction fraction) {
-        return (numerator * fraction.denominator) == (denominator * fraction.numerator);
+        return (numerator * fraction.getDenominator()) == (denominator * fraction.getNumerator());
     }
 
     public Fraction add(Fraction fraction) {
-        int commonDenominator = denominator * fraction.denominator;
-        int newNumerator = numerator * fraction.denominator + denominator * fraction.numerator;
+        int commonDenominator = denominator * fraction.getDenominator();
+        int newNumerator = numerator * fraction.getDenominator() + denominator * fraction.getNumerator();
         return new Fraction(newNumerator, commonDenominator);
     }
 
     public Fraction multiply(Fraction fraction) {
-        int newNumerator = numerator * fraction.numerator;
-        int newDenominator = denominator * fraction.denominator;
+        int newNumerator = numerator * fraction.getNumerator();
+        int newDenominator = denominator * fraction.getDenominator();
         return new Fraction(newNumerator, newDenominator);
     }
 
     public Fraction divide(Fraction fraction) {
-        int newNumerator = numerator * fraction.denominator;
-        int newDenominator = denominator * fraction.numerator;
+        int newNumerator = numerator * fraction.getDenominator();
+        int newDenominator = denominator * fraction.getNumerator();
         return new Fraction(newNumerator, newDenominator);
     }
 
